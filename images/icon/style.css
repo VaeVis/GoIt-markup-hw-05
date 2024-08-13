@@ -15,6 +15,10 @@ Single-colored icons can be modified like so:
 }
 ========================================== */
 
+.icon-diligence {
+  width: 2.34375em;
+}
+
 .icon-form-mail {
   width: 0.75em;
 }
@@ -24,21 +28,17 @@ Single-colored icons can be modified like so:
 }
 
 .icon-icon-send {
-  width: 1.2001953125em;
-}
-
-.icon-diligence {
-  width: 2.357421875em;
+  width: 1.1875em;
 }
 
 .icon-punctuality {
-  width: 2.357421875em;
+  width: 2.34375em;
 }
 
 .icon-strategy {
-  width: 2.357421875em;
+  width: 2.34375em;
 }
 
 .icon-technology {
-  width: 2.357421875em;
+  width: 2.34375em;
 }

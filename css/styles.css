@@ -12,7 +12,7 @@
 
 
 body{
-    font-family: "Roboto", sans-serif;
+    font-family: "Roboto", "Raleway", sans-serif;
     color: rgba(67, 68, 85, 1);
     background-color: rgba(255, 255, 255, 1);
 }
@@ -93,7 +93,8 @@ img{
 }
 
     .head-nav-menu > li:hover{
-        color: rgba(77, 90, 229, 1);}
+        color: rgba(77, 90, 229, 1);
+        transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);}
 
     .head-nav-menu > li:active:nth-child(1)::after{
         display: block;
@@ -103,7 +104,8 @@ img{
         height: 4px;
         margin-top: -4px;
         position: relative;
-        bottom: -24px;  
+        bottom: -24px; 
+        transition: 250ms cubic-bezier(0.4, 0, 0.2, 1); 
     } 
 
 .header-contacts {
@@ -124,7 +126,8 @@ img{
 
 
     .contact-list :hover,
-    .contact-list :focus {color: rgba(64, 75, 191, 1);}
+    .contact-list :focus {color: rgba(64, 75, 191, 1);
+        transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);}
 
 
                         /* FIRST MAIN SECTION (hero) - button & title */
@@ -170,10 +173,14 @@ img{
     
 }
 
-    button:hover,
-    button:focus {color: rgba(255, 255, 255, 1);
+.hero-button:hover,
+.hero-button:focus {color: rgba(255, 255, 255, 1);
         background: rgba(64, 75, 191, 1);
-        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);}
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+        transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        outline: none;
+    }
+        
 
 
                            /* MAIN SECTION FEATURE */
@@ -277,9 +284,15 @@ img{
     cursor: pointer;
 }
 
-.icon-team:hover {
-    --color3: #404BBF;
+.icon-team{
+    fill: rgba(77, 90, 229, 1);
 }
+
+.icon-team:hover {
+    fill: #404BBF;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 /* MAIN SECTION PORTFOLIO */
 
 
@@ -315,6 +328,7 @@ img{
 .portfolio-list>li:hover{
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
     height: 100%;
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-descr {
@@ -369,6 +383,7 @@ img{
     transform: translateY(0);
     height: 300px;
     opacity: 1;
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 
@@ -429,8 +444,13 @@ img{
     cursor: pointer;
 }
 
+.icon-foot{
+    fill: rgba(77, 90, 229, 1);
+}
+
 .icon-foot:hover {
-    --color3: rgba(49, 208, 170, 1);
+    fill: rgba(49, 208, 170, 1);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* newsletter - sub */
@@ -470,7 +490,7 @@ img{
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
     height: 40px;
     color: white;
-    font-family: "Roboto" sans-serif;
+    font-family: "Roboto", sans-serif;
     font-size: 12px;
     line-height: 24px;
     letter-spacing: 0.04em;
@@ -512,37 +532,44 @@ img{
 .newsletter > button:focus,
 .newsletter > button:hover{
     background-color: rgba(64, 75, 191, 1);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    outline: none;
 }
 
-/* FORM CONTACT */
+/* MODAL WINDOW */
 
-.backdrop {
-    display: inline-block;
-    text-align: left;
-    background-color: rgba(252, 252, 252, 1);
-    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.14),
-    0px 1px 3px 0px rgba(0, 0, 0, 0.12),
-    0px 2px 1px 0px rgba(0, 0, 0, 0.2);
-    height: 584px;
-    width: 408px; 
+/* .backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(46, 47, 66, 0.4);
+
 }
 
-
-
-/* backdrop */
-.backdrop{
+.modal-window{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 408px;
-    height: 584px;
-}
+    background: #fcfcfc;
+    border-radius: 4px;
+
+} */
+
 /* form */
 
 
-
 .form-container{
-    display: block;
     margin: 0;
-    background-color: grey;
-    margin: 24px;
+    padding: 24px;
+    position: relative;
+    width: 408px;
+    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+    0px 1px 3px 0px rgba(0, 0, 0, 0.12),
+    0px 2px 1px 0px rgba(0, 0, 0, 0.2);
 }
 
 
@@ -550,7 +577,7 @@ img{
 .form-title {
     display: inline;
     text-wrap: nowrap;
-    margin: 24px 0px 16px 0px;
+    padding: 24px 0px 16px 0px;
     font-family: "Roboto", sans-serif;
     font-weight: 500;
     line-height: 24px;
@@ -559,15 +586,12 @@ img{
 }
 
 .form-container > label{
-    border: 1px solid red;
     display:flex; 
     flex-direction: column;
+    padding-bottom: 0;
+    margin: 24px 0px 16px 0px;
     width: 100%;
-}
 
-.exit-button{
-    text-align: right;
-    
 }
 
 .form-inform{
@@ -575,22 +599,48 @@ img{
     display: flex;
     flex-direction: column;
     gap: 8px;
+
 }
 
-.form-inform > label 
-{
+.form-exit{
+    border-radius: 50%;
+    height: 24px;
+    width: 24px;
+    top: 24px;
+    right: 24px;
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.1);
     display: flex;
-    flex-direction: column;
-    row-gap: 4px;
-    border: 1px solid rgb(75, 163, 235);
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    cursor: pointer;
+    position: absolute;
+    box-shadow: none;
 }
+
+
+.icon-form-exit{
+    fill: rgba(231, 233, 252, 1);    
+}
+    
+    .icon-form-exit:hover{
+        fill: rgba(64, 75, 191, 1);
+        --color3: white;
+        transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .form-exit:hover{
+        border:none;
+    } 
+
 
 /* INPUTS */
 
 .label-wrapper{
     position: relative;
 }
-.label-wrapper > input{
+.input{
     width: 100%;
     height: 40px;
     border: 1px solid rgba(46, 47, 66, 0.4);
@@ -598,7 +648,7 @@ img{
     padding-left: 38px;
 }
 
-.label-wrapper > input:focus{
+.input:focus{
     outline: none;
     border: 1px solid rgba(77, 90, 229, 1);
 }
@@ -609,45 +659,57 @@ img{
     margin: 8px 16px;
 }
 
-#form-com {
+#form-textarea {
     resize:none;
     outline: none;
     width: 100%;
     padding: 8px 16px;
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    border-radius: 4px;
   }
 
-.terms{
-font-size: 12px;
-font-weight: 400;
-line-height: 14px;
-letter-spacing: 0.04em;
-text-align: left;
+#form-textarea:focus{
+    outline: none;
+    border: 1px solid rgba(77, 90, 229, 1);
+    
+  }
+
+.form-terms{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14px;
+    letter-spacing: 0.04em;
+    text-align: left;
+
 }
 
-.terms > p {
-font-size: 12px;
-line-height: 14px;
-letter-spacing: 0.04em;
-text-align: left;
+.form-checkbox{
+    display: inline-flex;
+    flex-direction: row;
+    padding: 16px 0px 24px 0px;
+    column-gap: 8px;
 }
 
-.terms > p > a { 
+.terms-p{
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.04em;
+    text-align: left;
+}
+
+.span-policy { 
     text-decoration: underline;
     color: rgba(77, 90, 229, 1);  
-}
-
-.terms{
-    display: i
-    gap: 8px;
-    background-color: white;
-    padding: 8px 0 24px 0;
 }
 
 .form-submit{
     width: 196px;
     height: 56px;
     border-radius: 4px;
-    outline: none;
+    border: none;
     background-color: rgba(77, 90, 229, 1);
     color: rgba(255, 255, 255, 1);
     font-weight: 500;
@@ -655,12 +717,44 @@ text-align: left;
     letter-spacing: 0.04em;
 }
 
-
-/* ICON */
-
-#personal-icon{
---color4: black}
-
-.icon-form-exit{
---color2: rgba(231, 233, 252, 1);
+.form-submit:hover,
+.form-submit:focus{
+    background-color: rgba(64, 75, 191, 1);
+    outline: none;
+    transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+.label-wrapper:focus-within {
+    fill: rgba(77, 90, 229, 1);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);   
+}
+
+/* svg-check */
+.icon-checkedbox{
+    fill: rgba(255, 255, 255, 1);
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    border-radius: 2px;
+    cursor: pointer;
+    --color2: rgba(255, 255, 255, 1);
+    
+}
+
+/* input check */
+.input-checkbox{
+    display: none;
+    margin: 0;
+    overflow: hidden;
+}
+
+/* input + svg */
+
+.input-checkbox:checked + .icon-checkedbox{
+    fill: rgba(64, 75, 191, 1);
+    border: none;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+
+
+
